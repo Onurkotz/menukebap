@@ -8,7 +8,9 @@ fetch("./data.json")
       menu.appendChild(list);
       list.innerHTML = `<div id="list" class="${datas[i].option}"> <div>${
         i + 1
-      }. ${datas[i].name}</div> <div>${datas[i].price}</div> </div>`;
+      }. ${datas[i].name}</div> <div>${
+        datas[i].price
+      } <img src="screenshot/tl.png" width="15px"/></div> </div>`;
     }
     $(function () {
       $(".btn-1").click(function () {
