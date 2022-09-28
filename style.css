@@ -1,7 +1,16 @@
-body {
-  display: none;
+:root {
+  --color: rgb(236, 0, 11);
+  --bg-color: rgba(255, 255, 255, 0.637);
+  --border: 3px solid black;
 }
-
+@media only screen and (min-width: 767px) {
+  .notmobile {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+}
 @media only screen and (max-width: 767px) {
   html,
   body {
@@ -10,71 +19,93 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(236, 0, 11);
+    background-color: var(--color);
+  }
+  .notmobile {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .line {
+    border-top: var(--border);
+    height: 10px;
+    border-radius: 10px;
+  }
+  .line-bt {
+    border-bottom: var(--border);
+    height: 10px;
+    border-radius: 10px;
   }
   .top {
-    color: rgb(219, 219, 219);
+    color: var(--bg-color);
     font-size: 50px;
     text-align: center;
-    border-bottom: 2px solid black;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    border-radius: 10px;
     margin-bottom: 10px;
+    text-shadow: 0px 3px black;
   }
-
   .btn-container > button {
-    background-color: rgb(219, 219, 219);
+    background-color: var(--bg-color);
     text-align: center;
     padding: 10px;
     font-size: 15px;
     border: none;
     border-radius: 10px;
   }
-
   .btn-1 {
     grid-area: soup;
   }
-
   .btn-2 {
     grid-area: wait;
   }
-
   .btn-3 {
     grid-area: kebap;
   }
-
   .btn-4 {
     grid-area: dessert;
   }
-
   .btn-5 {
     grid-area: drink;
   }
-
+  .btn-6 {
+    grid-area: all;
+  }
   .btn-container {
     display: grid;
-
-    grid-template-areas:
-      "soup soup wait wait"
-      "kebap kebap kebap kebap"
-      "dessert dessert drink drink";
+    grid-template-areas: "soup soup wait wait" "kebap kebap kebap kebap" "dessert dessert drink drink" "all all all all";
     gap: 7px;
-    background-color: #5e4343;
     border-radius: 10px;
     padding: 10px;
-    border: 1px solid black;
+    border-top: var(--border);
+    border-bottom: var(--border);
     margin-bottom: 10px;
   }
   #menu {
     width: 100%;
     height: auto;
     background-color: rgba(255, 255, 255, 0.637);
-    border-radius: 10px;
+    border-radius: 10px; /* border-top: var(--border); border-bottom: var(--border); */
   }
-
   #list {
     display: flex;
     justify-content: space-between;
     padding: 15px;
     font-size: 20px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color);
+  }
+  blockquote {
+    color: var(--bg-color);
+  }
+  .note {
+    border-top: 2px dashed var(--bg-color);
+    border-bottom: 2px dashed var(--bg-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  i{
+    font-size: 12px;
   }
 }
